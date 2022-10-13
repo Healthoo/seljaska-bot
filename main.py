@@ -28,7 +28,7 @@ async def on_message(message):
 @bot.event
 async def on_message(message):
     # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
-    if "frešer" in message.content.lower():
+    if "frešer" in message.content.lower() and message.author.bot != True:
     # SENDS BACK A MESSAGE TO THE CHANNEL.
         await message.reply("classic frešer W")
 
