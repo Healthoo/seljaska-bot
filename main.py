@@ -21,16 +21,13 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
-    if "vilec" in message.content.lower():
-    # SENDS BACK A MESSAGE TO THE CHANNEL.
-        await message.reply("L + ratio")
-
-@bot.event
-async def on_message(message):
-    # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
     if "frešer" in message.content.lower() and message.author.bot != True:
     # SENDS BACK A MESSAGE TO THE CHANNEL.
         await message.reply("classic frešer W")
+    # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
+    if "vilec" in message.content.lower():
+    # SENDS BACK A MESSAGE TO THE CHANNEL.
+        await message.reply("L + ratio")
 
 # EXECUTES THE BOT WITH THE SPECIFIED TOKEN.
 bot.run(discord_token)
