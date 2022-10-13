@@ -25,5 +25,13 @@ async def on_message(message):
     # SENDS BACK A MESSAGE TO THE CHANNEL.
         await message.reply("L + ratio")
 
+@bot.event
+async def on_message(message):
+    # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
+    if "frešer" in message.content.lower():
+    # SENDS BACK A MESSAGE TO THE CHANNEL.
+    elif "freser" in message.content.lower():
+        await message.reply("classic frešer W")
+
 # EXECUTES THE BOT WITH THE SPECIFIED TOKEN.
 bot.run(discord_token)
