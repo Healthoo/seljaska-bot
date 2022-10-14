@@ -14,7 +14,7 @@ bot_2 =commands.Bot(intents=discord.Intents.all(), command_prefix="%")
 # Event 1, bot pozdravi
 @bot.event
 async def on_ready():
-   await bot.get_channel(606576973619134495).send("KI STE PIČKE")
+   await bot.get_channel(606576973619134495).send("FREŠER = SUPREME OVERLORD", file=discord.File('chungus.png'))
 
 # Event 2, odgovori na keywords
 @bot.event
