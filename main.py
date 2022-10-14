@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import config as c
+import random
 
 # Zloudaj vars
 discord_token = c.grab_token()
@@ -10,6 +11,14 @@ responses = c.responses
 # Client functionality, not moraš enablat intente
 bot = discord.Client(intents= discord.Intents().all())
 bot_2 =commands.Bot(intents=discord.Intents.all(), command_prefix="%")
+
+def printChamp():
+    string = ""
+    rands = random.sample(range(0, 161), 5)
+    for x in rands:
+        string += c.champs[x] + " "
+    return string
+
 
 # Event 1, bot pozdravi
 @bot.event
@@ -33,6 +42,9 @@ async def on_message(message):
             found = content[index:index+len(x)]
         if found in responses and message.author.bot != True:
             await message.reply(responses[found])
+
+    if "picks" in content:
+        await message.reply(printChamp())
             
     #if str(ctx.message.author == "bicmac the police man#4039"):
         #await message.reply("Ti nisi moj šef")
