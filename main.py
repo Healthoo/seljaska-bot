@@ -18,7 +18,7 @@ async def on_ready():
 
 # Event 2, odgovori na keywords
 @bot.event
-async def on_message(message, ctx):
+async def on_message(message):
     content = message.content.lower()
     for x in responses.keys(): 
         index = content.find(x)
@@ -29,10 +29,10 @@ async def on_message(message, ctx):
         if found in responses and message.author.bot != True:
             await message.reply(responses[found])
             
-    if str(ctx.message.author == "bicmac the police man#4039"):
-        await message.reply("Ti nisi moj šef")
-    elif content in responses and message.author.bot != True:
-        await message.reply(responses[content])
+    #if str(ctx.message.author == "bicmac the police man#4039"):
+    #    await message.reply("Ti nisi moj šef")
+    #if content in responses and message.author.bot != True:
+    #   await message.reply(responses[content])
 
 @bot_2.command(name="unleashthekraken")
 async def lol(ctx):
