@@ -20,7 +20,7 @@ def printChamp():
 #    return string
     df1 = pd.read_csv("champs.txt", names=["picks"])
     sample = df1.sample(5)
-    igralci = ["igralec 1", "igralec 2", "igralec 3", "igralec 4", "igralec 5"]
+    igralci = ["Igralec 1: ", "Igralec 2: ", "Igralec 3: ", "Igralec 4: ", "Igralec 5: "]
     sample["igralec"] = igralci
     sample = sample[["igralec", "picks"]].to_string(header=False, index=False)
     return sample
