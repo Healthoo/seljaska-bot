@@ -7,7 +7,7 @@ def grab_token():
     # Loads the .env file that resides on the same level as the script.
     load_dotenv()
     # Grab the API token from the .env file.
-    discord_token = os.getenv(key="key")
+    discord_token = os.getenv("key")
     return discord_token
 
 # Tu bom pol dal nek gigaspam
