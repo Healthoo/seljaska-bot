@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import config as c
-import random
+import pandas as pd
 
 # Zloudaj vars
 discord_token = c.grab_token()
@@ -13,11 +13,17 @@ bot = discord.Client(intents= discord.Intents().all())
 bot_2 =commands.Bot(intents=discord.Intents.all(), command_prefix="%")
 
 def printChamp():
-    string = ""
-    rands = random.sample(range(0, 161), 5)
-    for x in rands:
-        string += c.champs[x] + " "
-    return string
+#    string = ""
+#    rands = random.sample(range(0, 161), 5)
+#    for x in rands:
+#        string += c.champs[x] + " "
+#    return string
+    df1 = pd.read_csv("champs.txt", names=["picks"])
+    sample = df1.sample(5)
+    igralci = ["igralec 1", "igralec 2", "igralec 3", "igralec 4", "igralec 5"]
+    sample["igralec"] = igralci
+    sample = sample[["igralec", "picks"]].to_string(header=False, index=False)
+    return sample
 
 
 # Event 1, bot pozdravi
@@ -44,7 +50,8 @@ async def on_message(message):
             await message.reply(responses[found])
 
     if "picks" in content:
-        await message.reply(printChamp())
+        if message.author.bot != True:
+            await message.reply(printChamp())
             
     #if str(ctx.message.author == "bicmac the police man#4039"):
         #await message.reply("Ti nisi moj šef")
