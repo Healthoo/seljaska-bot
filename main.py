@@ -20,6 +20,15 @@ async def on_ready():
 @bot.event
 async def on_message(message, ctx):
     content = message.content.lower()
+    for x in responses.keys(): 
+        index = content.find(x)
+        found = ""
+
+        if index != -1:
+            found = content[index:index+len(x)]
+        if found in responses and message.author.bot != True:
+            await message.reply(responses[found])
+            
     if str(ctx.message.author == "bicmac the police man#4039"):
         await message.reply("Ti nisi moj šef")
     elif content in responses and message.author.bot != True:
