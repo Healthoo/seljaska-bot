@@ -20,11 +20,16 @@ async def on_ready():
 @bot.event
 async def on_message(message, ctx):
     content = message.content.lower()
+
+    # Pogleda ce je kluc v sporocilu in odgovori
     for x in responses.keys(): 
+        
+        # Index zacetke kljuca v stringu
         index = content.find(x)
         found = ""
 
         if index != -1:
+            # Substring 
             found = content[index:index+len(x)]
         if found in responses and message.author.bot != True:
             await message.reply(responses[found])
