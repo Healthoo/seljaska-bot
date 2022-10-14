@@ -18,9 +18,11 @@ async def on_ready():
 
 # Event 2, odgovori na keywords
 @bot.event
-async def on_message(message):
+async def on_message(message, ctx):
     content = message.content.lower()
-    if content in responses and message.author.bot != True:
+    if str(ctx.message.author == "bicmac the police man#4039"):
+        await message.reply("Ti nisi moj šef")
+    elif content in responses and message.author.bot != True:
         await message.reply(responses[content])
 
 @bot_2.command(name="unleashthekraken")
