@@ -2,6 +2,7 @@
 import os
 # Import load_dotenv function from dotenv module.
 from dotenv import load_dotenv
+import pandas as pd
 
 def grab_token():
     # Loads the .env file that resides on the same level as the script.
