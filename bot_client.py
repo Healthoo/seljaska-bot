@@ -31,3 +31,4 @@ def bot_brez_komand(discord_token, responses):
                 await message.reply(responses[found])
 
     bot.run(discord_token)
+bot_brez_komand(discord_token, responses)

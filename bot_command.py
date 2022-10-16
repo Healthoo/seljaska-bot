@@ -32,4 +32,4 @@ def bot_z_komandami(discord_token):
 
     # EXECUTES THE BOT WITH THE SPECIFIED TOKEN.
     bot_cmd.run(discord_token)
-#bot_z_komandami(discord_token)
+bot_z_komandami(discord_token)
